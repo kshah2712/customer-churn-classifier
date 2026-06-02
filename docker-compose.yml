@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+  churn-api:
+    build: .
+    container_name: churn-classifier-api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./models:/app/models
+    restart: unless-stopped
